@@ -1,4 +1,7 @@
-# AngularTable
+# DATA MANAGER
+
+DRAG & DROP table data to form and vice versa.
+Also we can drag column headers to top drop area to group by that column.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
 
