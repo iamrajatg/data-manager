@@ -1,0 +1,59 @@
+<div class="card form-table-wrapper">
+  <div class="col-md-8 table-wrapper">
+    <div class="group-by-area" cdkDropList>
+      <p class="group-by-text">
+        Drag a column header here to group by that column
+      </p>
+    </div>
+    <app-table
+      [tableData]="listData"
+      (remove)="removeItem($event)"
+      (drop)="dropListTable($event)"
+    ></app-table>
+  </div>
+  <div
+    class="form-wrapper"
+    cdkDropList
+    id="user-form"
+    [cdkDropListData]="listData"
+    [cdkDropListConnectedTo]="['data-table']"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <form
+      class="form"
+      [formGroup]="userForm"
+      [ngClass]="userForm.valid ? 'form-valid' : ''"
+    >
+      <div>
+        <div class="form-row">
+          <div class="form-group id-group">
+            <label>ID:</label>
+            <input type="text" formControlName="id" />
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Name:</label>
+              <input type="text" formControlName="name" />
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Department:</label>
+              <input type="text" formControlName="department" />
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Position:</label>
+              <input type="text" formControlName="position" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-drag-area" cdkDrag [cdkDragData]="userForm">
+        <div class="custom-placeholder" *cdkDragPlaceholder></div>
+        <span *cdkDragPreview></span>
+      </div>
+    </form>
+  </div>
+</div>

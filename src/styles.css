@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+.custom-placeholder {
+    width:100%; 
+    left:0;
+    right:0;
+    position:absolute;
+    height:3px;
+    border:1px solid blue;
+}
+
+.form-wrapper .custom-placeholder {
+    top:0;
+    position: fixed !important;
+    height: 0px;
+    display: none;
+    width: 0px ;
+    border: none ;
+}
+
+.form-wrapper .cdk-drag {
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+.heading-drag-area {
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;  
+}
+.heading-drag-area:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+
+.form-wrapper .cdk-drag:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+.cdk-drag-handle {
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+.cdk-drag-handle:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+
+.cdk-drop-list-dragging {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}

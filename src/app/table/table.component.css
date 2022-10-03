@@ -1,0 +1,56 @@
+tbody {
+    position: relative !important;
+}
+
+th {
+  position: relative;
+}
+
+  .selected-row {
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .selected-icon {
+    position: absolute;
+    top:35%;
+    left:40%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: .4em 0 .4em .6em;
+    border-color: transparent transparent transparent #000;
+    opacity: .75; 
+    box-sizing: border-box;
+  }
+
+  .drag-preview {
+    border:1px solid black;
+    opacity: 1;
+    padding:10px 15px;
+    background-color: white;
+  }
+
+  .preview-text{
+    color:cornflowerblue;
+    font-size:20px;
+  }
+
+  .highlight td{
+    background-color:rgb(173, 197, 242) ;
+  }
+
+  .highlight .name-cell {
+    background-color:rgb(235, 237, 241) ;
+  }
+
+  .heading-drag-area {
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+  }
+  
+  

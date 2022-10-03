@@ -1,0 +1,66 @@
+<table
+  class="table table-bordered"
+  cdkDropList
+  id="data-table"
+  [cdkDropListData]="tableData"
+  [cdkDropListConnectedTo]="['user-form']"
+  (cdkDropListDropped)="onDrop($event)"
+>
+  <thead>
+    <tr>
+      <th></th>
+      <th>
+        <div cdkDrag class="heading-drag-area" [cdkDragData]="'id'"></div>
+        <span>ID</span>
+      </th>
+      <th>
+        <div cdkDrag class="heading-drag-area" [cdkDragData]="'name'"></div>
+        <span>Name</span>
+      </th>
+      <th>
+        <div
+          cdkDrag
+          class="heading-drag-area"
+          [cdkDragData]="'department'"
+        ></div>
+        <span>Department</span>
+      </th>
+      <th>
+        <div cdkDrag class="heading-drag-area" [cdkDragData]="'position'"></div>
+        <span>Position</span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      class="table-row"
+      *ngFor="let item of tableData; let i = index"
+      cdkDrag
+      [cdkDragData]="item"
+      [ngClass]="i === selectedRow ? 'highlight' : ''"
+    >
+      <td class="selected-row" (click)="onSelectRow(i)">
+        <div *ngIf="i === selectedRow">
+          <div class="selected-icon"></div>
+        </div>
+      </td>
+      <td>
+        <span>{{ item.id }}</span>
+      </td>
+      <td cdkDragHandle class="name-cell" (click)="onSelectRow(i)">
+        <span>{{ item.name }}</span>
+        <div class="drag-preview" *cdkDragPreview>
+          <p class="preview-text">Dragging 1 record</p>
+          <p class="preview-name">{{ item.name }}</p>
+        </div>
+      </td>
+      <div class="custom-placeholder" *cdkDragPlaceholder></div>
+      <td>
+        <span>{{ item.department }}</span>
+      </td>
+      <td>
+        <span>{{ item.position }}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
